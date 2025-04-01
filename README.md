@@ -33,7 +33,7 @@ The sectors of the tock market I looked into were:
 
 The regression model I used to analyse relationships between the stock market and economic variables was:
 
-![pictures](/regressionmodelpicture.png)
+![(/regression model.jpg)]
 
 The findings are summarised in the following table:
 
