@@ -61,13 +61,14 @@ To check for the model's reliability and multicollinearity, I ran some tests in 
                           euro_dollar + avg_vix_close + avg_gold_us_price, 
                           data = Data_Quarterly_MT), direction = "both")
   summary(stepwise_model)
-
+  ```
 
 
 To check for multicollinearity, I used the vif() function:
 
   ```{r multicollinearity}
   vif(stepwise_model)
+  ```
 
 I then compared different models from their error terms and AIC values to determine which one fit the data better:
 
@@ -82,3 +83,7 @@ I then compared different models from their error terms and AIC values to determ
   # Extract AIC and BIC
   cat("\nTechreg_s.lm AIC:", AIC(Techreg_s.lm), "BIC:", BIC(Techreg_s.lm))
   cat("\nstepwise_model AIC:", AIC(stepwise_model), "BIC:", BIC(stepwise_model)) 
+  ```
+
+## Part 2: Forecasting stock market prices with ARIMA models
+
