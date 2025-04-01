@@ -62,7 +62,13 @@ To check for the model's reliability and multicollinearity, I ran some tests in 
                           data = Data_Quarterly_MT), direction = "both")
   summary(stepwise_model)
 
-  vif(stepwise_model)
+
 
 To check for multicollinearity, I used the vif() function:
 
+  ```{r multicollinearity}
+  vif(stepwise_model)
+
+I then compared different models from their error terms and AIC values to determine which one fit the data better:
+
+  ```{r comparisons}
