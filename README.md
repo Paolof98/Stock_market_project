@@ -64,3 +64,5 @@ To check for the model's reliability and multicollinearity, I ran some tests in 
 
   vif(stepwise_model)
 
+To check for multicollinearity, I used the vif() function:
+
