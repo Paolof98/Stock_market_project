@@ -54,6 +54,13 @@ We can interpret results with the following:
 * There is a weak positive relationship between the price of gold and the price of stocks, signifying syncronised growth
 * Bitcoin values are different from other stocks because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is acyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship can signify that crypto is seen as a store of value during inflationary pressures
 
-To check for the model's reliability and multicollinearity, I ran some tests in R:
+To check for the model's reliability and multicollinearity, I ran some tests in R. To check for the model's reliability, I used the stepwise() function:
 
-* To check for the model's reliability, I used the 
+  ```{r stepwise}
+  stepwise_model <- step(lm(avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi + 
+                          euro_dollar + avg_vix_close + avg_gold_us_price, 
+                          data = Data_Quarterly_MT), direction = "both")
+  summary(stepwise_model)
+
+  vif(stepwise_model)
+
