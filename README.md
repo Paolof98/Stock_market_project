@@ -72,3 +72,13 @@ To check for multicollinearity, I used the vif() function:
 I then compared different models from their error terms and AIC values to determine which one fit the data better:
 
   ```{r comparisons}
+  # Extract R-squared and Adjusted R-squared: simple vs stepwise
+  cat("\nTechreg_s.lm R-squared:", summary(Techreg_s.lm)$r.squared, 
+    "Adjusted R-squared:", summary(Techreg_s.lm)$adj.r.squared)
+
+  cat("\nstepwise_model R-squared:", summary(stepwise_model)$r.squared, 
+    "Adjusted R-squared:", summary(stepwise_model)$adj.r.squared)
+
+  # Extract AIC and BIC
+  cat("\nTechreg_s.lm AIC:", AIC(Techreg_s.lm), "BIC:", BIC(Techreg_s.lm))
+  cat("\nstepwise_model AIC:", AIC(stepwise_model), "BIC:", BIC(stepwise_model)) 
