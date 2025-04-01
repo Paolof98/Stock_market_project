@@ -37,7 +37,7 @@ The regression model I used to analyse relationships between the stock market an
 
 The findings are summarised in the following table:
 
-![](regression%20models%20results.png)
+![](Regression%20models%20results.jpg)
 
 We can interprate the regression results with the following:
 
