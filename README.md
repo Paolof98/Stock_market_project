@@ -86,7 +86,7 @@ I then compared different models from their error terms and AIC values to determ
   ```
 
 ## Part 2: Forecasting stock market prices with ARIMA models
-To forecast stock market returns in the future, I tested different Autoregresivve, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and treid implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives a more confident estimate.
+To forecast stock market returns in the future, I tested different Autoregresivve, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and treid implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives a more confident estimate, as highlighted by the lower AICc and error terms.
 
 **ARIMA model forecast into 5 years, harmonic series, K = 2**
 ![](ARIMA%20GDP%20and%20VIX%20K%20=%202.png)
@@ -94,5 +94,7 @@ To forecast stock market returns in the future, I tested different Autoregresivv
 **ARIMA model forecast into 5 years, no harmonic series**
 ![](ARIMA%20GDP%20and%20VIX%20no%20harmonic.png)
 
+Below is the visualisation of the forecasts, with the 80% Confidence Interval (CI) in the dark blue area and the 95% CI in the light blue area. Notice that the Bitcoin area is larger due to the smaller sample size. Note also that I used the model that fitted best with the technology stocks. If I had used models specific to each sector I could have found more confident estimates.
 
+![](combined_forecasts.png)
 
