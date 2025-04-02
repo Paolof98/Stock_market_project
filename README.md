@@ -118,3 +118,4 @@ If we look into the actual estimates of each sector, we can compare them to see 
 
 ## Part 3: Beyond ARIMA models: looking into Machine Learning models
 
+To test the stock market data on more advanced models, I examined 2 machine learning models: glmnet and random forest. 
