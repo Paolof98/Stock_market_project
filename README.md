@@ -8,7 +8,7 @@ The independent variables I used were:
 * CPI
 * Interest rate
 * Unemployment rate
-* Eur/Dollar exchange rate
+* Euro/Dollar exchange rate
 * VIX: market volatility
 * Gold price
 
