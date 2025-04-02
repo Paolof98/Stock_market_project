@@ -98,3 +98,10 @@ Below is the visualisation of the forecasts, with the 80% Confidence Interval (C
 
 ![](combined_forecasts.png)
 
+If we look into the actual estimates of each sector, we can compare them to see which are expected to grow the most over the next 5 years. Below is the bar chart showing the percentage changes of prices of each sector of the stock market, with the S&P 500 estimate as a reference value. Technology, consumer discretionary and financials sectors are expected to grow more than the S&P 500 over the next 5 years, thus they are expected to grow more than a "safe" investment. On the other hand, utilities, consumer staples, healthcare and industrials are expected to grow less than the S&P 500 over the next 5 years. Bitcoin is expected to lose value, however its forecasts are not as reliable.
+
+![](Forecasts%20results%20all%20sectors%20chart.png)
+
+
+## Part 3: Beyond ARIMA models: looking into Machine Learning models
+
