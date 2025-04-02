@@ -1,9 +1,5 @@
 # Analysing and forecasting stock market returns: project for the Data Analystics bootcamp at the Curious Lounge Academy
 
-* Part 1: Analysing the stock market: regression models
-* Part 2: Forecasting stock market returns with ARIMA models
-* Part 3: Beyond ARIMA models: looking into Machine Learning models
-
 To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. 
 
 The independent variables I used were:
@@ -32,11 +28,20 @@ I worked on this project with Python, SQL, R, Excel and Tableu. Below is the sum
 
 ![](Methodology%20summary%20table.png)
 
+
+This work is divided in the following parts:
+
+* Part 1: Analysing the stock market: regression models
+* Part 2: Forecasting stock market returns with ARIMA models
+* Part 3: Beyond ARIMA models: looking into Machine Learning models
+
+
 ## Part 1: Analysing the stock market: regression models
 
 The regression model I used to analyse relationships between the stock market and economic variables was:
 
 ![](regression%20model.jpg)
+
 
 We can interpret the regression coefficients with the following:
 
@@ -48,6 +53,7 @@ We can interpret the regression coefficients with the following:
 The findings are summarised in the following table:
 
 ![](Regression%20models%20results.jpg)
+
 
 We can interpret results with the following:
 
@@ -94,16 +100,20 @@ To forecast stock market returns in the future, I tested different Autoregresivv
 **ARIMA model forecast into 5 years, harmonic series, K = 2**
 ![](ARIMA%20GDP%20and%20VIX%20K%20=%202.png)
 
+
 **ARIMA model forecast into 5 years, no harmonic series**
 ![](ARIMA%20GDP%20and%20VIX%20no%20harmonic.png)
+
 
 Below is the visualisation of the forecasts, with the 80% Confidence Interval (CI) in the dark blue area and the 95% CI in the light blue area. Notice that the Bitcoin area is larger due to the smaller sample size. Note also that I used the model that fitted best with the technology stocks. If I had used models specific to each sector I could have found more confident estimates.
 
 ![](combined_forecasts.png)
 
+
 If we look into the actual estimates of each sector, we can compare them to see which are expected to grow the most over the next 5 years. Below is the bar chart showing the percentage changes of prices of each sector of the stock market, with the S&P 500 estimate as a reference value. Technology, consumer discretionary and financials sectors are expected to grow more than the S&P 500 over the next 5 years, thus they are expected to grow more than a "safe" investment. On the other hand, utilities, consumer staples, healthcare and industrials are expected to grow less than the S&P 500 over the next 5 years. Bitcoin is expected to lose value, however its forecasts are not as reliable.
 
 ![](Forecasts%20results%20all%20sectors%20chart.jpg)
+
 
 
 ## Part 3: Beyond ARIMA models: looking into Machine Learning models
