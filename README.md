@@ -120,4 +120,17 @@ If we look into the actual estimates of each sector, we can compare them to see 
 
 To test the stock market data on more advanced models, I examined 2 machine learning models: glmnet and random forest. I compared them by the R squared and the error terms, and visualised the comparisons with boxplots:
 
+**MAE: glmnet vs random forest**
+![](MAE%20RF%20vs%20GLMNet.jpg)
 
+**RMSE: glmnet vs random forest**
+![](RMSE%20RF%20vs%20GLMNet.jpg)
+
+**R squared: glmnet vs random forest**
+![](R%20squared%20RF%20vs%20GLMnet.jpg)
+
+As can be seen by the box plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better.
+
+If we were to compare the random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
+
+![](ARIMA%20K=2%20vs%20RF,%20GDP%20and%20VIX.jpg)
