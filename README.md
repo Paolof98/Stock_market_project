@@ -28,6 +28,9 @@ The sectors of the tock market I looked into were:
 * S&P 500
 * Bitcoin, as a proxy for crypto
 
+I worked on this project with Python, SQL, R, Excel and Tableu. Below is the summary table of the methodology of this project.
+
+![](methodology%20summary%20table.jpg)
 
 ## Part 1: Analysing the stock market: regression models
 
