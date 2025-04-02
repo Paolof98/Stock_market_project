@@ -86,11 +86,13 @@ I then compared different models from their error terms and AIC values to determ
   ```
 
 ## Part 2: Forecasting stock market prices with ARIMA models
-To forecast stock market returns in the future, I tested different Autoregresivve, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and treid implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better.
+To forecast stock market returns in the future, I tested different Autoregresivve, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and treid implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives a more confident estimate.
 
 **ARIMA model forecast into 5 years, harmonic series, K = 2**
-picture
+![](ARIMA%20GDP%20and%20VIX%20K%20=%202.jpg)
 
 **ARIMA model forecast into 5 years, no harmonic series**
-picture
+![](ARIMA%20GDP%20and%20VIX%20no%20harmonic.jpg)
+
+
 
