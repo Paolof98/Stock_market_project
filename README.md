@@ -57,9 +57,29 @@ In Python I used APIs to extract the most recent data of the stock market from Y
       sector_data[sector] = df["Adj Close"]  # Store adjusted closing prices
   ```
 
-I then imported the data in SQL to clean it, join relevant variables and interpolate data to have consistent time frequencies
+I then imported the data in SQL to clean it, join relevant variables and interpolate data to have consistent time frequencies. I also generated the GDP growth rate value in SQL:
 
-This work is divided in the following parts:
+   ```{sql}
+   --- GDP growth rate here
+   CREATE TABLE economy_data_with_gdpgrowthperq AS 
+   WITH gdp_growth_q AS (
+       SELECT
+    	   date,
+    	   rgdp2017,
+           LAG(rgdp2017) OVER (ORDER BY date) AS previous_gdp_value,
+           ((rgdp2017 - LAG(rgdp2017) OVER (ORDER BY date)) / LAG(rgdp2017) OVER (ORDER BY date)) * 100 AS gdp_growth_rate
+    	   FROM economy_data_longterm_quarterly
+    	   )
+	   SELECT 
+	   edl.*, ggq.gdp_growth_rate   
+	   FROM economy_data_longterm_quarterly AS edl
+	   LEFT JOIN gdp_growth_q AS ggq
+		   ON edl.date = ggq.date
+	   WHERE previous_gdp_value IS NOT NULL
+	   ORDER BY date;
+   ```
+
+I then used the clean data in R to do the analysis, which is divided in the following parts:
 
 * Part 1: Analysing the stock market: regression models
 * Part 2: Forecasting stock market returns with ARIMA models
