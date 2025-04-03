@@ -1,8 +1,12 @@
-# Analysing and forecasting stock market returns: project for the Data Analystics bootcamp at the Curious Lounge Academy
+# Analysing and forecasting stock market returns
+## Project for the Data Analystics bootcamp at the Curious Lounge Academy
 
-To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. 
+Paolo Ferraro
+April 2025
 
-## Methodology
+## Purpose
+
+To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. The objective was to analyse stock market data to see how it relates to economic data (e.g. how confident do investors get when the economy is thriving, which sectors grow the most) and I attempted to forecast the stock market into the future experimenting with ARIMA and machine learning models, as learned in the [Data Forecasting in R](https://app.datacamp.com/learn/courses/forecasting-in-r) and [Machine Learning in R](https://app.datacamp.com/learn/courses/machine-learning-with-caret-in-r) courses in DataCamp (completed in December 2024 and February 2025 respectively). Moreover, I applied my learned knowledge in Python and SQL from the Data Analytics Bootcamp from The Curious Lounge Academy.
 
 The independent variables I used were:
 
@@ -25,6 +29,8 @@ The sectors of the stock market I looked into were:
 * Utilities
 * S&P 500
 * Bitcoin, as a proxy for crypto
+
+## Methodology
 
 I worked on this project with Python, SQL, R, Excel and Tableu. Below is the summary table of the methodology of this project.
 
@@ -100,7 +106,7 @@ We can interpret the regression coefficients with the following:
 * A negative relationship between the euro/dollar exchange rate and the stock market price (beta 3 < 0) can illustrate a substitution effect between euros and stock indices
 * A positive relationship between the price of gold and the price of stocks (beta 4 > 0) can signify that there is syncronised growth between gold and stock indices, which could be due to inflationary pressures, a negative relationship (beta 4 > 0) could demonstrate a substitution effect between stocks and gold, as gold could be considered a safe asset. If stock prices fall, then gold could be seen as a store of value
 
-The findings are summarised in the following table:
+The findings of the regression models are summarised in the following table. The numbers represent the coefficient esrtimates of the OLS models:
 
 ![](Regression%20models%20results.jpg)
 
@@ -111,9 +117,9 @@ We can interpret results with the following:
 * There is a positive relationship between the CPI and stock market prices. This can signify that as inflation increases, stocks generally act as a hedge against inflation, thus people decide to invest in the stock market rather than keeping assets in savings
 * There is a negative relationship between the euro/dollar exchange rate and stock prices. This could be due to the fact that if the currency is stronger, people value current earnings more than future earnings
 * There is a weak positive relationship between the price of gold and the price of stocks, signifying syncronised growth
-* Bitcoin values are different from other stocks because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is acyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship can signify that crypto is seen as a store of value during inflationary pressures
+* Bitcoin values are different from other stocks because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is anticyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship with CPI can signify that crypto is seen as a store of value during inflationary pressures
 
-To check for the model's reliability and multicollinearity, I ran some tests in R. To check for the model's reliability, I used the stepwise() function:
+To check for the model's reliability and multicollinearity, I ran some tests in R. To check for the model's reliability, I used the stepwise() function, which gave me the best variables to use. I ran this experiment on technology stocks and assumed the same model for all other sectors:
 
   ```{r stepwise}
   stepwise_model <- step(lm(avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi + 
@@ -129,7 +135,7 @@ To check for multicollinearity, I used the vif() function:
   vif(stepwise_model)
   ```
 
-I then compared different models from their error terms and AIC values to determine which one fit the data better:
+which gave me values less than 5 for all variables, signifying no important multicollinearity between them. I then compared different models from their error terms and AIC values to determine which one fit the data better:
 
   ```{r comparisons}
   # Extract R-squared and Adjusted R-squared: simple vs stepwise
@@ -145,7 +151,7 @@ I then compared different models from their error terms and AIC values to determ
   ```
 
 ## Part 2: Forecasting stock market prices with ARIMA models
-To forecast stock market returns in the future, I tested different Autoregresivve, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and treid implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives a more confident estimate, as highlighted by the lower AICc and error terms.
+To forecast stock market returns in the future, I tested different Autoregresive, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and tried implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives more confident estimates, as highlighted by the lower AICc and error terms.
 
 **ARIMA model forecast into 5 years, harmonic series, K = 2**
 ![](ARIMA%20GDP%20and%20VIX%20K%20=%202.png)
@@ -155,12 +161,12 @@ To forecast stock market returns in the future, I tested different Autoregresivv
 ![](ARIMA%20GDP%20and%20VIX%20no%20harmonic.png)
 
 
-Below is the visualisation of the forecasts, with the 80% Confidence Interval (CI) in the dark blue area and the 95% CI in the light blue area. Notice that the Bitcoin area is larger due to the smaller sample size. Note also that I used the model that fitted best with the technology stocks. If I had used models specific to each sector I could have found more confident estimates.
+Below is the visualisation of the forecasts, with the 80% Confidence Interval (CI) in the dark blue area and the 95% CI in the light blue area. Notice that the Bitcoin forecast area is larger due to the smaller sample size. Note also that I used the model that fitted best with the technology stocks. If I had used models specific to each sector I could have found more confident estimates.
 
 ![](combined_forecasts.png)
 
 
-If we look into the actual estimates of each sector, we can compare them to see which are expected to grow the most over the next 5 years. Below is the bar chart showing the percentage changes of prices of each sector of the stock market, with the S&P 500 estimate as a reference value. Technology, consumer discretionary and financials sectors are expected to grow more than the S&P 500 over the next 5 years, thus they are expected to grow more than a "safe" investment. On the other hand, utilities, consumer staples, healthcare and industrials are expected to grow less than the S&P 500 over the next 5 years. Bitcoin is expected to lose value, however its forecasts are not as reliable.
+If we look into the actual estimates of each sector (the black lines of the forecasts), we can compare them to see which are expected to grow the most over the next 5 years. Below is the bar chart showing the percentage changes of prices of each sector of the stock market, with the S&P 500 estimate as a reference value. Technology, consumer discretionary and financials sectors are expected to grow more than the S&P 500 over the next 5 years, thus they are expected to grow more than a "safe" investment. On the other hand, utilities, consumer staples, healthcare and industrials are expected to grow less than the S&P 500 over the next 5 years. Bitcoin is expected to lose value, however its forecasts are not as reliable.
 
 ![](Forecasts%20results%20all%20sectors%20chart.jpg)
 
@@ -168,7 +174,7 @@ If we look into the actual estimates of each sector, we can compare them to see 
 
 ## Part 3: Beyond ARIMA models: looking into Machine Learning models
 
-To test the stock market data on more advanced models, I examined 2 machine learning models: glmnet and random forest. I compared them by the R squared and the error terms, and visualised the comparisons with boxplots:
+To test the stock market data on more advanced models, I examined 2 machine learning models: glmnet and random forest. I compared them by the R squared and the error terms, and visualised the comparisons with boxplots and x-y plots of datasets:
 
 **MAE: glmnet vs random forest**
 ![](MAE%20RF%20vs%20GLMNet.png)
@@ -179,7 +185,10 @@ To test the stock market data on more advanced models, I examined 2 machine lear
 **R squared: glmnet vs random forest**
 ![](R%20squared%20RF%20vs%20GLMnet.png)
 
-As can be seen by the box plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better.
+**x-y plots MAE**
+![](scatter%20plot%20of%20MAE%20RF%20vs%20GLMNet.png)
+
+As can be seen by the box plots and the scatter plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better.
 
 If we were to compare the random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
 
