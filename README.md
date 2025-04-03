@@ -32,6 +32,30 @@ I worked on this project with Python, SQL, R, Excel and Tableu. Below is the sum
 
 In Python I used APIs to extract the most recent data of the stock market from Yahoo finance, for example:
 
+   ```{python}
+  pip install yfinance
+
+  # Define sector ETFs (ticker symbols)
+  sector_etfs = {
+      "Technology": "XLK",
+      "Financials": "XLF",
+      "Healthcare": "XLV",
+      "Energy": "XLE",
+      "Consumer Discretionary": "XLY",
+      "Utilities": "XLU",
+      "Industrials": "XLI",
+      "Materials": "XLB",
+      "Real Estate": "XLRE",
+      "Communication Services": "XLC",
+      "Consumer Staples": "XLP"
+
+  # Download historical data (weekly)
+  sector_data = {}
+
+  for sector, ticker in sector_etfs.items():
+      df = yf.download(ticker, start="1980-01-01", interval="1d", auto_adjust=False)  # Disable auto-adjust
+      sector_data[sector] = df["Adj Close"]  # Store adjusted closing prices
+  ```
 
 
 This work is divided in the following parts:
