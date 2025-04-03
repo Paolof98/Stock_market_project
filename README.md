@@ -2,6 +2,8 @@
 
 To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. 
 
+## Methodology
+
 The independent variables I used were:
 
 * Real GDP, real GDP gorwth rate
@@ -12,7 +14,7 @@ The independent variables I used were:
 * VIX: market volatility
 * Gold price
 
-The sectors of the tock market I looked into were:
+The sectors of the stock market I looked into were:
 
 * Technology
 * Healthcare
@@ -27,6 +29,9 @@ The sectors of the tock market I looked into were:
 I worked on this project with Python, SQL, R, Excel and Tableu. Below is the summary table of the methodology of this project.
 
 ![](Methodology%20summary%20table.png)
+
+In Python I used APIs to extract the most recent data of the stock market from Yahoo finance, for example:
+
 
 
 This work is divided in the following parts:
