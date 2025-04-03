@@ -10,11 +10,11 @@ To do this project I analysed economic data from the US, from the end of the 199
 
 For more information you can access my code in this repository:
 
-* Python code
-* SQL code
-* R code
-* R code
-* R code
+* "Python code"
+* "SQL code"
+* "Project.R": R code part 1
+* "new script.R": R code part 2
+* "new script 25/04": R code part 3
 
 The independent variables I used were:
 
