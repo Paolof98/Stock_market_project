@@ -8,6 +8,14 @@ April 2025
 
 To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. The objective was to analyse stock market data to see how it relates to economic data (e.g. how confident do investors get when the economy is thriving, which sectors grow the most) and I attempted to forecast the stock market into the future experimenting with ARIMA and machine learning models, as learned in the [Data Forecasting in R](https://app.datacamp.com/learn/courses/forecasting-in-r) and [Machine Learning in R](https://app.datacamp.com/learn/courses/machine-learning-with-caret-in-r) courses in DataCamp (completed in December 2024 and February 2025 respectively). Moreover, I applied my learned knowledge in Python and SQL from the Data Analytics Bootcamp from The Curious Lounge Academy.
 
+For more information you can access my code in this repository:
+
+* Python code
+* SQL code
+* R code
+* R code
+* R code
+
 The independent variables I used were:
 
 * Real GDP, real GDP gorwth rate
