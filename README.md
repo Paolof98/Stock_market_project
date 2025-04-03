@@ -1,7 +1,7 @@
 # Analysing and forecasting stock market returns
 ## Project for the Data Analystics bootcamp at the Curious Lounge Academy
 
-Paolo Ferraro
+Paolo Ferraro, 
 April 2025
 
 ## Purpose
