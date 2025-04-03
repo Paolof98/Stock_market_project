@@ -12,9 +12,9 @@ For more information you can access my code in this repository:
 
 * "Python code"
 * "SQL code"
-* "R code part 1"
-* "new script.R": R code part 2
-* "new script 25/04": R code part 3
+* "R code part 1": load in library and data, regression models, time frames
+* "R code part 2": ARIMA, glmnet and random forest models 
+* "R code part 3": Arima and random forest comparisons
 
 The independent variables I used were:
 
@@ -196,8 +196,8 @@ To test the stock market data on more advanced models, I examined 2 machine lear
 **x-y plots MAE**
 ![](scatter%20plot%20of%20MAE%20RF%20vs%20GLMNet.png)
 
-As can be seen by the box plots and the scatter plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better.
+As can be seen by the box plots and the scatter plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better. Since the random forest model fits the data better, I fine tuned the model to reduce its AICc value further.
 
-If we were to compare the random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
+If we were to compare the fine tuned random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
 
 ![](ARIMA%20K=2%20vs%20RF,%20GDP%20and%20VIX.png)
