@@ -57,6 +57,7 @@ In Python I used APIs to extract the most recent data of the stock market from Y
       sector_data[sector] = df["Adj Close"]  # Store adjusted closing prices
   ```
 
+I then imported the data in SQL to clean it, join relevant variables and interpolate data to have consistent time frequencies
 
 This work is divided in the following parts:
 
