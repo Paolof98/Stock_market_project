@@ -4,6 +4,7 @@
 Paolo Ferraro, 
 April 2025
 
+
 ## Purpose
 
 To do this project I analysed economic data from the US, from the end of the 1990s to the end of 2024. The objective was to analyse stock market data to see how it relates to economic data (e.g. how confident do investors get when the economy is thriving, which sectors grow the most) and I attempted to forecast the stock market into the future experimenting with ARIMA and machine learning models, as learned in the [Data Forecasting in R](https://app.datacamp.com/learn/courses/forecasting-in-r) and [Machine Learning in R](https://app.datacamp.com/learn/courses/machine-learning-with-caret-in-r) courses on DataCamp (completed in December 2024 and February 2025 respectively). Moreover, I applied my learned knowledge in Python and SQL from the Data Analytics Bootcamp of The Curious Lounge Academy. I presented my finidngs through a PowerPoint presentation to the other students of the course, which you can access from this repository: "Bootcamp Project presentation.pptx". Presenting these findings enriched my experience in communicating technical analysis to non-expert audiences in simple terms.
@@ -15,6 +16,9 @@ For more information you can access my code in this repository:
 * "R code part 1": load in library and data, regression models, time frames
 * "R code part 2": ARIMA, glmnet and random forest models 
 * "R code part 3": ARIMA and random forest comparisons
+
+
+## Methodology
 
 The independent variables I used were:
 
@@ -37,8 +41,6 @@ The sectors of the stock market I looked into were:
 * Utilities
 * S&P 500
 * Bitcoin, as a proxy for crypto
-
-## Methodology
 
 I worked on this project with Python, SQL, R, Excel and Tableu. Below is the summary table of the methodology of this project.
 
@@ -158,6 +160,7 @@ which gave me values less than 5 for all variables, signifying no important mult
   cat("\nstepwise_model AIC:", AIC(stepwise_model), "BIC:", BIC(stepwise_model)) 
   ```
 
+
 ## Part 2: Forecasting stock market prices with ARIMA models
 To forecast stock market returns in the future, I tested different Autoregresive, Integrated, Moving Average (ARIMA) models. I compared them by their AICc terms and error values to find out which model gave the best estimates. I tried ARIMA models with macroeconomic regressors (GDP growth, CPI and interest rates) and tried implementing models with and without harmonic series. For the harmonic series moddels, I tried different values of K, compared to models without the harmonic series, and concluded that the model without harmonic series fits the data better. As can be seen below, the model without the harmonic series gives more confident estimates, as highlighted by the lower AICc and error terms.
 
@@ -177,7 +180,6 @@ Below is the visualisation of the forecasts, with the 80% Confidence Interval (C
 If we look into the actual estimates of each sector (the black lines of the forecasts), we can compare them to see which are expected to grow the most over the next 5 years. Below is the bar chart showing the percentage changes of prices of each sector of the stock market, with the S&P 500 estimate as a reference value. Technology, consumer discretionary and financials sectors are expected to grow more than the S&P 500 over the next 5 years, thus they are expected to grow more than a "safe" investment. On the other hand, utilities, consumer staples, healthcare and industrials are expected to grow less than the S&P 500 over the next 5 years. Bitcoin is expected to lose value, however its forecasts are not as reliable.
 
 ![](Forecasts%20results%20all%20sectors%20chart.jpg)
-
 
 
 ## Part 3: Beyond ARIMA models: looking into Machine Learning models
