@@ -198,7 +198,7 @@ To test the stock market data on more advanced models, I examined 2 machine lear
 **x-y plots MAE**
 ![](scatter%20plot%20of%20MAE%20RF%20vs%20GLMNet.png)
 
-As can be seen by the box plots and the scatter plots, the error terms of the random forest model are lower than the glmnet mode, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better. Since the random forest model fits the data better, I fine tuned the model to reduce its AICc value further.
+As can be seen by the box plots and the scatter plots, the error terms of the random forest model are lower than the glmnet model, whilst the R squared of the random forest model is higher, suggesting that this model fits the test data better. Since the random forest model fits the data better, I fine tuned the model to reduce its AICc value further.
 
 If we were to compare the fine tuned random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
 
