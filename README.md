@@ -14,7 +14,7 @@ For more information you can access my code in this repository:
 * "SQL code"
 * "R code part 1": load in library and data, regression models, time frames
 * "R code part 2": ARIMA, glmnet and random forest models 
-* "R code part 3": Arima and random forest comparisons
+* "R code part 3": ARIMA and random forest comparisons
 
 The independent variables I used were:
 
