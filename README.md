@@ -123,11 +123,11 @@ The findings of the regression models are summarised in the following table. The
 
 We can interpret results with the following:
 
-* All stock market sectors but Bitcoin are procyclical: as the GDP growth increases, so do stock market prices. However, some sectors more than others: when the economy is thriving, people are more confident on consumer discretionary, tech and healthcare stocks, and they are not as confident on investing in financials and utilities stocks.
-* There is a positive relationship between the CPI and stock market prices. This can signify that as inflation increases, stocks generally act as a hedge against inflation, thus people decide to invest in the stock market rather than keeping assets in savings
-* There is a negative relationship between the euro/dollar exchange rate and stock prices. This could be due to the fact that if the currency is stronger, people value current earnings more than future earnings
-* There is a weak positive relationship between the price of gold and the price of stocks, signifying syncronised growth
-* Bitcoin values are different from other stocks because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is anticyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship with CPI can signify that crypto is seen as a store of value during inflationary pressures
+* **All stock market sectors but Bitcoin are procyclical:** as the GDP growth increases, so do stock market prices. However, some sectors more than others: when the economy is thriving, people are more confident on consumer discretionary, tech and healthcare stocks, and they are not as confident on investing in financials and utilities stocks.
+* **There is a positive relationship between the CPI and stock market prices**. This can signify that as inflation increases, stocks generally act as a hedge against inflation, thus people decide to invest in the stock market rather than keeping assets in savings
+* **There is a negative relationship between the euro/dollar exchange rate and stock prices**. This could be due to the fact that if the currency is stronger, people value current earnings more than future earnings
+* **There is a weak positive relationship between the price of gold and the price of some stocks**, signifying syncronised growth
+* **Bitcoin values are different from other stocks** because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is anticyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship with CPI can signify that crypto is seen as a store of value during inflationary pressures
 
 To check for the model's reliability and multicollinearity, I ran some tests in R. To check for the model's reliability, I used the stepwise() function, which gave me the best variables to use. I ran this experiment on technology stocks and assumed the same model for all other sectors:
 
