@@ -7,15 +7,15 @@ April 2025
 
 ## Purpose
 
-To do this project I analysed economic data from the United States, from the end of the 1990s to the end of 2024. The objective was to analyse stock market data to see how it relates to economic data (e.g. how confident do investors get when the economy is thriving, which sectors grow the most) and I attempted to forecast the stock market into the future experimenting with ARIMA and machine learning models, as learned in the [Data Forecasting in R](https://app.datacamp.com/learn/courses/forecasting-in-r) and [Machine Learning in R](https://app.datacamp.com/learn/courses/machine-learning-with-caret-in-r) courses on DataCamp, completed in December 2024 and February 2025 respectively. Moreover, I applied my learned knowledge in Python and SQL from the Data Analytics Bootcamp of The Curious Lounge Academy. I presented my finidngs through a PowerPoint presentation to the other students of the course, which you can access from this repository: [Bootcamp Project presentation.pptx](). Presenting these findings enriched my experience in communicating technical analysis to non-expert audiences in simple terms.
+To do this project I analysed economic data from the United States, from the end of the 1990s to the end of 2024. The objective was to analyse stock market data to see how it relates to economic data (e.g. how confident do investors get when the economy is thriving, which sectors grow the most) and I attempted to forecast the stock market into the future experimenting with ARIMA and machine learning models, as learned in the [Data Forecasting in R](https://app.datacamp.com/learn/courses/forecasting-in-r) and [Machine Learning in R](https://app.datacamp.com/learn/courses/machine-learning-with-caret-in-r) courses on DataCamp, completed in December 2024 and February 2025 respectively. Moreover, I applied my learned knowledge in Python and SQL from the Data Analytics Bootcamp of The Curious Lounge Academy. I presented my finidngs through a PowerPoint presentation to the other students of the course, which you can access from this repository: [Bootcamp Project presentation.pptx](https://github.com/Paolof98/Stock_market_project/blob/main/Bootcamp%20Project%20presentation.pptx). Presenting these findings enriched my experience in communicating technical analysis to non-expert audiences in simple terms.
 
 For more information you can access my code in this repository:
 
-* "Python code"
-* "SQL code"
-* "R code part 1": load in library and data, regression models, time frames
-* "R code part 2": ARIMA, glmnet and random forest models 
-* "R code part 3": ARIMA and random forest comparisons
+* [Python code]()
+* [SQL code]()
+* [R code part 1](): load in library and data, regression models, time frames
+* [R code part 2](): ARIMA, glmnet and random forest models 
+* [R code part 3[(): ARIMA and random forest comparisons
 
 
 ## Methodology
