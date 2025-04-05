@@ -11,11 +11,11 @@ To do this project I analysed economic data from the United States, from the end
 
 For more information you can access my code in this repository:
 
-* [Python code]()
-* [SQL code]()
-* [R code part 1](): load in library and data, regression models, time frames
-* [R code part 2](): ARIMA, glmnet and random forest models 
-* [R code part 3[(): ARIMA and random forest comparisons
+* [Python code](https://github.com/Paolof98/Stock_market_project/blob/main/Python%20code)
+* [SQL code](https://github.com/Paolof98/Stock_market_project/blob/main/SQL%20code)
+* [R code part 1](https://github.com/Paolof98/Stock_market_project/blob/main/R%20code%20part%201): load in library and data, regression models, time frames
+* [R code part 2](https://github.com/Paolof98/Stock_market_project/blob/main/R%20code%20part%202): ARIMA, glmnet and random forest models 
+* [R code part 3](https://github.com/Paolof98/Stock_market_project/blob/main/R%20code%20part%203): ARIMA and random forest comparisons
 
 
 ## Methodology
