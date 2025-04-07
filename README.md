@@ -106,7 +106,7 @@ I then used the clean data in R to do the analysis, which is divided in the foll
 
 The regression model I used to analyse relationships between the stock market and economic variables was:
 
-![](regression%20model.jpg)
+![](regression%20model%20new.jpg)
 
 
 We can interpret the regression coefficients with the following:
