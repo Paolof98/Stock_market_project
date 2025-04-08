@@ -22,7 +22,7 @@ For more information you can access my code in this repository:
 
 The independent variables I used were:
 
-* Real GDP, real GDP gorwth rate
+* Real GDP, real GDP growth rate
 * Consumer Price Index (CPI)
 * Interest rate
 * Unemployment rate
@@ -73,7 +73,7 @@ In Python I used APIs to extract the most recent data of the stock market from Y
       sector_data[sector] = df["Adj Close"]  # Store adjusted closing prices
   ```
 
-I then imported the data in SQL to clean it, join relevant variables and interpolate data to have consistent time frequencies. I also generated the GDP growth rate value in SQL:
+I then imported the data in SQL to clean it, join relevant variables and interpolate data to consistent time frequencies. I also generated the GDP growth rate value in SQL:
 
    ```{sql}
    --- GDP growth rate here
@@ -97,12 +97,12 @@ I then imported the data in SQL to clean it, join relevant variables and interpo
 
 I then used the clean data in R to do the analysis, which is divided in the following parts:
 
-* Part 1: Analysing the stock market: regression models
+* Part 1: Correlation analysis of the stock market with economic variables
 * Part 2: Forecasting stock market returns with ARIMA models
 * Part 3: Beyond ARIMA models: looking into Machine Learning models
 
 
-## Part 1: Analysing the stock market: regression models
+## Part 1: Correlation analysis of the stock market with economic variables
 
 The regression model I used to analyse relationships between the stock market and economic variables was:
 
@@ -127,7 +127,7 @@ We can interpret results with the following:
 * **There is a positive relationship between the CPI and stock market prices**. This can signify that as inflation increases, stocks generally act as a hedge against inflation, thus people decide to invest in the stock market rather than keeping assets in savings
 * **There is a negative relationship between the euro/dollar exchange rate and stock prices**. This could be due to the fact that if the currency is stronger, people value current earnings more than future earnings
 * **There is a weak positive relationship between the price of gold and the price of some stocks**, signifying syncronised growth
-* **Bitcoin values are different from other stocks** because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients can still be interpretable: the fact that Bitcoin is anticyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship with CPI can signify that crypto is seen as a store of value during inflationary pressures
+* **Bitcoin values are different from other stocks** because the regressors are not as statistically significant due to the smaller sample size (Bitcoin data starts in 2014). The coefficients however can still be interpretable: the fact that Bitcoin is anticyclical can signify that people see crypto as a safe haven during economic downturns, as it happened in 2008 and during the COVID-19 pandemic. A strong positive relationship with CPI can signify that crypto is seen as a store of value during inflationary pressures
 
 To check for the model's reliability and multicollinearity, I ran some tests in R. To check for the model's reliability, I used the stepwise() function, which gave me the best variables to use. I ran this experiment on technology stocks and assumed the same model for all other sectors:
 
@@ -145,7 +145,7 @@ To check for multicollinearity, I used the vif() function:
   vif(stepwise_model)
   ```
 
-which gave me values less than 5 for all variables, signifying no important multicollinearity between them. I then compared different models from their error terms and AIC values to determine which one fit the data better:
+which gave me values of less than 5 for all variables, signifying no important multicollinearity between them. I compared different models from their error terms and AIC values to determine which one fit the data better:
 
   ```{r comparisons}
   # Extract R-squared and Adjusted R-squared: simple vs stepwise
