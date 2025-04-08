@@ -35,7 +35,7 @@ The sectors of the stock market I looked into were:
 * Technology
 * Healthcare
 * Financials
-* Coonsumer discretionary
+* Consumer discretionary
 * Consumer staples
 * Industrials
 * Utilities
