@@ -1,2 +1,3 @@
-Python\ code/* linguist-language=Python
-SQL\ code/* linguist-language=SQL
+Python code/*.py linguist-language=Python
+SQL code/*.sql linguist-language=SQL
+
