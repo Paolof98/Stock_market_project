@@ -203,3 +203,6 @@ As can be seen by the box plots and the scatter plots, the error terms of the ra
 If we were to compare the fine tuned random forest model to the ARIMA model used earlier, we can look into how each model compares to the test data. The random forest model has lower error terms and AICc, which suggests it can predict the data better than the ARIMA model as it fits the test data better. Below is a visual representation of this:
 
 ![](ARIMA%20K=2%20vs%20RF,%20GDP%20and%20VIX.png)
+
+
+Trigger language reanalysis
