@@ -204,5 +204,3 @@ If we were to compare the fine tuned random forest model to the ARIMA model used
 
 ![](ARIMA%20K=2%20vs%20RF,%20GDP%20and%20VIX.png)
 
-
-Trigger language reanalysis
