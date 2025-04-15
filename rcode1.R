@@ -319,34 +319,6 @@ summary(Bitcoin_SW.lm)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 cor(Data_Quarterly_MT[, c("interest_rate_us", "gdp_growth_rate", "cpi", "euro_dollar", "avg_gold_us_price", "avg_vix_close")])
 
 
@@ -371,23 +343,6 @@ granger_test
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # PART 3: Autoplots
 
 ## Daily stock market data
@@ -404,10 +359,3 @@ autoplot(ts_QuarterlyLT, facets = TRUE)
 
 ## Quarterly frequency Medium term. 
 autoplot(ts_QuarterlyMT, facets = TRUE) # GDP=1, CPI=2, unemployment rate=3, IR=4, GDPgrowth=5, ER=6, quarterdate=7, tech=8, financials=9, healthcare=10, consumer discretionary=11 etc
-
-
-
-
-
-
-
