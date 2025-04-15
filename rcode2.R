@@ -252,14 +252,6 @@ summary(Fit_Fourier_Only)
 
 
 
-
-
-
-
-
-
-
-
 # REPEAT MODELS FOR THE MONTHLY DATA:
 # Try the following models with monthly data:
 # 1) GDP growth, CPI, IRs no harmonic series, 2) 3 Variables with harmonic series, 3) Only harmonic series
@@ -556,13 +548,6 @@ plot(rf_importance)
 
 
 
-
-
-
-
-
-
-
 # SITUATION: GDP GROWTH, CPI, IR: GLMNet model better. Choosing different variables in RF makes model better
 # Compare models with the different variables?
 - GLMNet GDP, VIX
@@ -851,11 +836,6 @@ nrow(test_data)  # Check the number of rows in test_data
 
 
 
-
-
-
-
-
 # COMPARE RF AND ARIMA K=2, GDP AND VIX
 ## Predictions
 ARIMA_forecast_2V_Fourier_predictions <- as.numeric(ARIMA_forecast_2V_Fourier$mean)
@@ -1015,8 +995,3 @@ ggplot(rf_comparison_df, aes(x = Date, y = residuals)) +
   labs(title = "Residuals: Random Forest Model",
        x = "Date", y = "Residuals (Actual - Predicted)") +
   theme_minimal()
-
-
-
-
-
