@@ -100,8 +100,6 @@ write_xlsx(future_sector_df, "C:/Users/Paolo/Desktop/Project/Future_RF_Predictio
 
 
 
-
-
 ## RETRY MODEL WITHOUT VIX
 
 # Add lag columns to both train and test data
@@ -187,15 +185,6 @@ future_forecast_df_no_vix <- data.frame(
 write_xlsx(future_forecast_df_no_vix, "C:/Users/Paolo/Desktop/Project/Future_RF_No_VIX_Predictions.xlsx")
 
 
-
 rf_predictions_train <- predict(rf_tuned_no_vix, newdata = train_data_no_na)
 plot(train_data_no_na$avg_technology, type = "l", col = "blue")
 lines(rf_predictions_train, col = "red")
-
-
-
-
-
-
-
-
