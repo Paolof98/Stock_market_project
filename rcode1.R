@@ -138,7 +138,7 @@ summary(Bitcoin.lm)
 ## TRY NEW MODEL: Stock market returns = B0 + B1(GDPgrowth) + B2(IRs) + B3(Inflation) + B4(ER) + B5(VIX). Quarterly data
 
 ## Tech
-Techreg_5V.lm <- lm(formula = avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi + euro_dollar + avg_vix_close, data = Data_Quarterly_MT)
+Techreg_5V.lm <- lm(formula = avg_technology ~ gdp_growth_rate + interest_rate_us + cpi + euro_dollar + avg_vix_close, data = Data_Quarterly_MT)
 
 summary(Techreg_5V.lm)
 
@@ -217,7 +217,7 @@ vif(Techreg_5V.lm)
 ### TRY SIMPLER MODEL:
 # stock returns = B0 + B1(GDPgrowth) + B2(IRs) + B3(CPI)
 ## Tech
-Techreg_s.lm <- lm(formula = avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi, data = Data_Quarterly_MT)
+Techreg_s.lm <- lm(formula = avg_technology ~ gdp_growth_rate + interest_rate_us + cpi, data = Data_Quarterly_MT)
 
 summary(Techreg_s.lm)
 
@@ -229,7 +229,7 @@ summary(Techreg_s.lm)
 
 
 
-stepwise_model <- step(lm(avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi + 
+stepwise_model <- step(lm(avg_technology ~ gdp_growth_rate + interest_rate_us + cpi + 
                           euro_dollar + avg_vix_close + avg_gold_us_price, 
                           data = Data_Quarterly_MT), direction = "both")
 summary(stepwise_model)
@@ -239,7 +239,7 @@ vif(stepwise_model)
 
 
 
-stepwise_model_Nog <- step(lm(avg_technology ~ log(gdp_growth_rate) + interest_rate_us + cpi + 
+stepwise_model_Nog <- step(lm(avg_technology ~ gdp_growth_rate + interest_rate_us + cpi + 
                           euro_dollar + avg_vix_close, 
                           data = Data_Quarterly_MT), direction = "both")
 summary(stepwise_model_Nog)
@@ -271,19 +271,19 @@ Techreg_SW.lm <- lm(formula = avg_technology ~ log(gdp_growth_rate) + cpi + euro
 summary(Techreg_SW.lm)
 
 ## Financials
-Financials_SW.lm <- lm(formula = avg_financials ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+Financials_SW.lm <- lm(formula = avg_financials ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(Financials_SW.lm)
 
 
 ## Healthcare
-Healthcare_SW.lm <- lm(formula = avg_healthcare ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+Healthcare_SW.lm <- lm(formula = avg_healthcare ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(Healthcare_SW.lm)
 
 
 ## Consumer discretionary
-CD_SW.lm <- lm(formula = avg_consumer_discretionary ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+CD_SW.lm <- lm(formula = avg_consumer_discretionary ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(CD_SW.lm)
 
@@ -295,25 +295,25 @@ summary(Utilities_SW.lm)
 
 
 ## Industrials
-Industrials_SW.lm <- lm(formula = avg_industrials ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+Industrials_SW.lm <- lm(formula = avg_industrials ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(Industrials_SW.lm)
 
 
 ## Consumer staples
-CS_SW.lm <- lm(formula = avg_consumer_staples ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+CS_SW.lm <- lm(formula = avg_consumer_staples ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(CS_SW.lm)
 
 
 ## S&P500
-SandP_SW.lm <- lm(formula = avg_sandp_close ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+SandP_SW.lm <- lm(formula = avg_sandp_close ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(SandP_SW.lm)
 
 
 ## Bitcoin
-Bitcoin_SW.lm <- lm(formula = avg_bitcoin_close ~ log(gdp_growth_rate) + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
+Bitcoin_SW.lm <- lm(formula = avg_bitcoin_close ~ gdp_growth_rate + cpi + euro_dollar + avg_gold_us_price, data = Data_Quarterly_MT)
 
 summary(Bitcoin_SW.lm)
 
